@@ -1,0 +1,226 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  width: 320px;
+  padding: 0;
+  margin: 0;
+  background-color: #F0F2F5; /* Updated background color for overall scheme */
+  color: #333;
+  overflow: hidden;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+.input-section {
+  margin-bottom: 25px;
+}
+
+.color-input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #fcfcfc; /* Updated light background for input groups */
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e6ed;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03); /* Lighter inner shadow */
+}
+
+.color-input-group label {
+  margin-right: 15px;
+  min-width: 65px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* --- UPDATED Color Picker Styling --- */
+.color-input-group input[type="color"] {
+  -webkit-appearance: none; /* Crucial for Chrome to allow custom styling */
+  appearance: none;
+  width: 40px; /* Make it slightly smaller and more square */
+  height: 40px;
+  border: 1px solid #cdd4dc; /* Add a subtle border */
+  border-radius: 8px; /* More rounded corners, matching other elements */
+  background: #ffffff; /* Ensure a clean background */
+  cursor: pointer;
+  padding: 0; /* Remove padding */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+  overflow: hidden; /* Hide any overflow */
+  transition: border-color 0.2s ease-in-out;
+}
+
+.color-input-group input[type="color"]:hover {
+    border-color: #aebfd4; /* Slightly darker border on hover */
+}
+
+/* For the actual color swatch */
+.color-input-group input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0; /* Remove any internal padding */
+}
+
+.color-input-group input[type="color"]::-webkit-color-swatch {
+  border: none; /* Remove default swatch border */
+  border-radius: 7px; /* Slightly smaller radius than parent to create a subtle inner border effect */
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1); /* Very subtle inner line for definition */
+}
+/* --- END UPDATED Color Picker Styling --- */
+
+
+.hex-display {
+  margin-left: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 14px;
+  color: #666;
+  background-color: #eceff1;
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: 1px solid #dcdfe4;
+}
+
+/* Main Blend Button - now with vibrant gradient */
+button#mixColors {
+  width: 100%;
+  padding: 12px;
+  background-image: linear-gradient(135deg, #1043e6 0%, #067cd6 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(17, 138, 178, 0.3); /* Shadow matching new button colors */
+}
+
+button#mixColors:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(17, 138, 178, 0.4);
+}
+
+button#mixColors:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(17, 138, 178, 0.2);
+}
+
+.result-section {
+  text-align: center;
+  border-top: 1px solid #e0e6ed;
+}
+
+.result-section p {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #555;
+  font-weight: 600;
+}
+
+.color-box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #e0e6ed;
+  margin: 15px auto;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.copy-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  position: relative; /* For tooltip positioning */
+}
+
+#mixedColorHex {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  margin-right: 10px; /* Space between hex and button */
+}
+
+.copy-btn {
+  background-color: #E6EBF0; /* Lighter background for copy button */
+  border: 1px solid #cdd4dc;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex; /* To center icon and tooltip text if visible */
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 14px;
+  position: relative; /* For tooltip */
+}
+
+.copy-btn:hover {
+  background-color: #d0d6dd;
+  color: #333;
+}
+
+.copy-btn i {
+  margin-right: 5px; /* Space between icon and text (if text is added) */
+}
+
+/* Tooltip styles */
+.tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  white-space: nowrap; /* Prevent text wrapping */
+  font-size: 12px;
+}
+
+.tooltip-text::after { /* Arrow for the tooltip */
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.copy-btn:hover .tooltip-text,
+.copy-btn.copied .tooltip-text { /* Show tooltip on hover or when 'copied' class is active */
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Style for when the button is successfully copied - now with vibrant green */
+.copy-btn.copied {
+    background-color: #06D6A0; /* Vibrant green from the palette */
+    border-color: #06D6A0;
+    color: white;
+}
+
+.copy-btn.copied i {
+    color: white;
+}

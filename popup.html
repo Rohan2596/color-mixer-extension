@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Mixer</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- For copy icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Color Mixer </h1>
+    <div class="input-section">
+      <div class="color-input-group">
+        <label for="color1">Color 1</label>
+        <input type="color" id="color1" value="#ff6b6b">
+        <span class="hex-display" id="hex1Display">#FF6B6B</span>
+      </div>
+      <div class="color-input-group">
+        <label for="color2">Color 2</label>
+        <input type="color" id="color2" value="#4ecdc4">
+        <span class="hex-display" id="hex2Display">#4ECDC4</span>
+      </div>
+    </div>
+    
+    <button id="mixColors">Mix Colors</button>
+    
+    <div class="result-section">
+      <p>Mixed Color:</p>
+      <div id="mixedColorBox" class="color-box"></div>
+      <div class="copy-container">
+        <p id="mixedColorHex"></p>
+        <button id="copyColorBtn" class="copy-btn">
+          <i class="fas fa-copy"></i> <!-- Font Awesome copy icon -->
+          <span class="tooltip-text" id="copyTooltip">Copy to clipboard</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
