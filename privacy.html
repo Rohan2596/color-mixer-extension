@@ -2,81 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Privacy Policy – Simple Color Mixer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Simple Color Mixer</title>
   <style>
+    :root {
+      --bg: #0F172A;
+      --card: #1E293B;
+      --accent: #38BDF8;
+      --text: #F8FAFC;
+      --text-dim: #94A3B8;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background: #0f1117;
-      color: #e6e6eb;
-      padding: 30px;
-      max-width: 800px;
+      font-family: -apple-system, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px 20px;
+      max-width: 700px;
       margin: auto;
-      line-height: 1.6;
+      line-height: 1.7;
     }
-    h1, h2 {
-      color: #ffffff;
+    .badge {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    a {
-      color: #8aa2ff;
-      text-decoration: none;
+    h1 { font-size: 32px; margin: 20px 0 10px; }
+    h2 { font-size: 20px; color: var(--accent); margin-top: 40px; }
+    p, li { color: var(--text-dim); }
+    .contact-card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      margin-top: 30px;
     }
+    strong { color: var(--text); }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
   </style>
 </head>
 <body>
 
+  <span class="badge">Privacy-First Extension</span>
   <h1>Privacy Policy</h1>
-  <p><strong>Last updated:</strong> 2025</p>
+  <p><strong>Last updated:</strong> February 7, 2026</p>
 
-  <h2>Overview</h2>
   <p>
-    Simple Color Mixer is a Chrome extension that allows users to mix and preview
-    colors directly within a browser popup.
+    At <strong>Simple Color Mixer</strong>, we believe that your digital workspace should be private and secure. 
+    This policy outlines our commitment to your data security and transparency.
   </p>
 
-  <h2>Developer Information</h2>
+  <h2>1. Data Collection & Storage</h2>
   <p>
-    <strong>Developer:</strong> Rohan R. K.<br>
-    <strong>Contact:</strong> rohankadam2596 [at] gmail [dot] com
+    Simple Color Mixer is designed as a <strong>Zero-Server</strong> utility. We do not collect, store on external servers, or transmit any personal information or browsing history.
+  </p>
+  <ul>
+    <li><strong>No Personal Data:</strong> We do not ask for or access your name, email, or location.</li>
+    <li><strong>No Usage Tracking:</strong> We do not use cookies, tracking pixels, or third-party analytics.</li>
+    <li><strong>Local Storage:</strong> When you use the "Add to Palette" feature, hex codes are saved <strong>locally</strong> on your device using the <code>chrome.storage.local</code> API. This data is never synced, shared, or uploaded.</li>
+    <li><strong>Local Execution:</strong> All color mixing math and UI rendering happen entirely on your machine.</li>
+  </ul>
+
+  <h2>2. Browser Permissions</h2>
+  <p>
+    In accordance with the "Principle of Least Privilege," this extension requires only one essential permission:
+  </p>
+  <ul>
+    <li><strong>Storage:</strong> Used exclusively to allow you to save and retrieve your custom color palettes locally.</li>
+  </ul>
+  <p>This extension <strong>cannot</strong> read your website data, access your tabs, or see your browsing history.</p>
+
+  <h2>3. Third-Party Disclosure</h2>
+  <p>
+    Since we do not collect any data, there is no data to sell, trade, or transfer. The extension does not communicate with any external APIs, advertising networks, or servers.
   </p>
 
-  <h2>Data Collection</h2>
+  <h2>4. Compliance</h2>
   <p>
-    This extension does <strong>not collect, store, transmit, or share</strong>
-    any personal or sensitive user data.
+    This extension complies with the <strong>Google Chrome Web Store User Data Policy</strong>, including the Limited Use requirements.
   </p>
 
-  <h2>Data Processing</h2>
-  <p>
-    All color calculations and previews are performed locally in the browser.
-    No data is sent to external servers.
-  </p>
-
-  <h2>Permissions</h2>
-  <p>
-    This extension does not request or require any special permissions.
-  </p>
-
-  <h2>Third-Party Services</h2>
-  <p>
-    Simple Color Mixer does not use any third-party services, analytics,
-    advertising networks, or external APIs.
-  </p>
-
-  <h2>Offline Use</h2>
-  <p>
-    The extension works fully offline once installed.
-  </p>
-
-  <h2>Changes</h2>
-  <p>
-    Any updates to this privacy policy will be reflected on this page.
-  </p>
-
-  <h2>Contact</h2>
-  <p>
-    If you have any questions about this privacy policy, please contact the
-    developer using the details above.
-  </p>
+  <div class="contact-card">
+    <h2>Developer Contact</h2>
+    <p>
+      <strong>Developer:</strong> Rohan R. K.<br>
+      <strong>Inquiries:</strong> rohankadam2596 [at] gmail [dot] com
+    </p>
+  </div>
 
 </body>
 </html>

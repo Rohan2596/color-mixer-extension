@@ -1,226 +1,192 @@
+:root {
+  --bg-main: #F0F2F5;
+  --card-bg: #ffffff;
+  --text-primary: #1A1A1A;
+  --text-secondary: #64748B;
+  --accent-gradient: linear-gradient(135deg, #1043e6 0%, #067cd6 100%);
+  --success-color: #06D6A0;
+  --border-color: #E2E8F0;
+  --radius: 12px;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
-  width: 320px;
-  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  width: 340px;
   margin: 0;
-  background-color: #F0F2F5; /* Updated background color for overall scheme */
-  color: #333;
-  overflow: hidden;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  background-color: #ffffff;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background-color: var(--card-bg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 h1 {
-  text-align: center;
-  color: #2c3e50;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 25px;
-  letter-spacing: -0.5px;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.input-section {
-  margin-bottom: 25px;
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  background: #F1F5F9;
+  color: var(--text-secondary);
+  border-radius: 20px;
+  text-transform: uppercase;
 }
 
 .color-input-group {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
-  background-color: #fcfcfc; /* Updated light background for input groups */
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: 1px solid #e0e6ed;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03); /* Lighter inner shadow */
+  margin-bottom: 12px;
+  background-color: #F8FAFC;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
 }
 
-.color-input-group label {
-  margin-right: 15px;
-  min-width: 65px;
-  font-weight: 600;
-  color: #555;
+.input-wrapper { display: flex; align-items: center; margin-left: auto; }
+
+input[type="color"] {
+  -webkit-appearance: none;
+  width: 32px; height: 32px;
+  border: none; cursor: pointer; background: none;
 }
 
-/* --- UPDATED Color Picker Styling --- */
-.color-input-group input[type="color"] {
-  -webkit-appearance: none; /* Crucial for Chrome to allow custom styling */
-  appearance: none;
-  width: 40px; /* Make it slightly smaller and more square */
-  height: 40px;
-  border: 1px solid #cdd4dc; /* Add a subtle border */
-  border-radius: 8px; /* More rounded corners, matching other elements */
-  background: #ffffff; /* Ensure a clean background */
-  cursor: pointer;
-  padding: 0; /* Remove padding */
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
-  overflow: hidden; /* Hide any overflow */
-  transition: border-color 0.2s ease-in-out;
+input[type="color"]::-webkit-color-swatch {
+  border: 2px solid #fff; border-radius: 6px; box-shadow: 0 0 0 1px var(--border-color);
 }
-
-.color-input-group input[type="color"]:hover {
-    border-color: #aebfd4; /* Slightly darker border on hover */
-}
-
-/* For the actual color swatch */
-.color-input-group input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 0; /* Remove any internal padding */
-}
-
-.color-input-group input[type="color"]::-webkit-color-swatch {
-  border: none; /* Remove default swatch border */
-  border-radius: 7px; /* Slightly smaller radius than parent to create a subtle inner border effect */
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1); /* Very subtle inner line for definition */
-}
-/* --- END UPDATED Color Picker Styling --- */
-
 
 .hex-display {
-  margin-left: auto;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-  font-size: 14px;
-  color: #666;
-  background-color: #eceff1;
-  padding: 5px 8px;
-  border-radius: 5px;
-  border: 1px solid #dcdfe4;
+  font-family: 'SF Mono', monospace;
+  font-size: 11px;
+  background: #EDF2F7;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-left: 8px;
 }
 
-/* Main Blend Button - now with vibrant gradient */
-button#mixColors {
+#mixColors {
   width: 100%;
   padding: 12px;
-  background-image: linear-gradient(135deg, #1043e6 0%, #067cd6 100%);
+  background: var(--accent-gradient);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 17px;
   font-weight: 600;
-  margin-bottom: 15px;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 4px 10px rgba(17, 138, 178, 0.3); /* Shadow matching new button colors */
+  margin-bottom: 20px;
 }
 
-button#mixColors:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(17, 138, 178, 0.4);
-}
-
-button#mixColors:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 5px rgba(17, 138, 178, 0.2);
-}
-
-.result-section {
-  text-align: center;
-  border-top: 1px solid #e0e6ed;
-}
-
-.result-section p {
-  margin-bottom: 10px;
-  font-size: 15px;
-  color: #555;
-  font-weight: 600;
-}
+.result-section { padding-top: 15px; border-top: 1px solid var(--border-color); text-align: center; }
 
 .color-box {
-  width: 100px;
-  height: 100px;
-  border: 2px solid #e0e6ed;
-  margin: 15px auto;
-  border-radius: 50%;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  width: 70px; height: 70px; margin: 0 auto 15px;
+  border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 4px solid #fff;
 }
 
 .copy-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  position: relative; /* For tooltip positioning */
-}
-
-#mixedColorHex {
-  font-weight: 600;
-  color: #2c3e50;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-  margin-right: 10px; /* Space between hex and button */
+  display: flex; background: #F1F5F9; padding: 4px 4px 4px 12px;
+  border-radius: 30px; align-items: center; justify-content: space-between;
+  width: 160px; margin: 0 auto;
 }
 
 .copy-btn {
-  background-color: #E6EBF0; /* Lighter background for copy button */
-  border: 1px solid #cdd4dc;
-  padding: 8px 10px;
-  border-radius: 6px;
+  background: #fff; border: none; width: 28px; height: 28px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.2s;
+}
+
+.copy-btn.copied { background: var(--success-color); color: white; }
+
+/* PALETTE GRID */
+.palette-section { margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border-color); }
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  justify-items: center;
+  margin-top: 10px;
+}
+
+.palette-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex; /* To center icon and tooltip text if visible */
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  z-index: 1;
+}
+
+.swatch:hover { transform: scale(1.1); }
+
+.remove-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
-  font-size: 14px;
-  position: relative; /* For tooltip */
-}
-
-.copy-btn:hover {
-  background-color: #d0d6dd;
-  color: #333;
-}
-
-.copy-btn i {
-  margin-right: 5px; /* Space between icon and text (if text is added) */
-}
-
-/* Tooltip styles */
-.tooltip-text {
-  visibility: hidden;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 10px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%; /* Position above the button */
-  left: 50%;
-  transform: translateX(-50%);
+  cursor: pointer;
+  border: 2px solid #fff;
   opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
-  white-space: nowrap; /* Prevent text wrapping */
-  font-size: 12px;
+  transition: all 0.2s;
+  z-index: 10;
 }
 
-.tooltip-text::after { /* Arrow for the tooltip */
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #333 transparent transparent transparent;
+.palette-item:hover .remove-btn { opacity: 1; }
+
+.swatch-hex {
+  font-family: 'SF Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-secondary);
 }
 
-.copy-btn:hover .tooltip-text,
-.copy-btn.copied .tooltip-text { /* Show tooltip on hover or when 'copied' class is active */
-  visibility: visible;
-  opacity: 1;
-}
+/* FOOTER */
+.popup-footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-color); text-align: center; }
+.rating-box { font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; display: flex; justify-content: center; align-items: center; gap: 4px; }
+.rate-link { color: #1043e6; text-decoration: none; font-weight: 700; }
+.secondary-btn { width: 100%; background: #F8FAFC; border: 1px solid var(--border-color); padding: 8px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-bottom: 12px; }
+.branding { font-family: 'SF Mono', monospace; font-size: 9px; color: #94A3B8; text-transform: uppercase; }
 
-/* Style for when the button is successfully copied - now with vibrant green */
-.copy-btn.copied {
-    background-color: #06D6A0; /* Vibrant green from the palette */
-    border-color: #06D6A0;
-    color: white;
-}
-
-.copy-btn.copied i {
-    color: white;
+@media (prefers-color-scheme: dark) {
+  :root { --bg-main: #0F172A; --card-bg: #1E293B; --text-primary: #F8FAFC; --text-secondary: #94A3B8; --border-color: #334155; }
+  .color-input-group, .badge { background-color: #0F172A; }
+  .hex-display, .copy-container, .secondary-btn { background: #334155; }
+  .copy-btn { background: #1E293B; }
+  .swatch, .remove-btn { border-color: #1E293B; }
 }
